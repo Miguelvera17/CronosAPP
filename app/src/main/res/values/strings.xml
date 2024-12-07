@@ -9,4 +9,11 @@
         <item>Francés</item>
         <item>Catalán</item>
     </string-array>
+
+    <string-array name="time_options">
+        <item>Últimos 7 días</item>
+        <item>Hace una semana</item>
+        <item>Hace un mes</item>
+        <item>Rango personalizado</item>
+    </string-array>
 </resources>

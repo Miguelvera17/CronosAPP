@@ -62,6 +62,8 @@ class TopFragment : Fragment() {
                         true
                     }
                     R.id.option3 -> {
+                        val intent = Intent(requireContext(), ResumenAsistenciaActivity::class.java)
+                        startActivity(intent)
                         true
                     }
                     R.id.option4 -> {

@@ -7,4 +7,238 @@
     android:layout_height="match_parent"
     tools:context=".ResumenAsistenciaActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:name="com.example.cronosapp.TopFragment"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:name="com.example.cronosapp.StudentFragment"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="210dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textResume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/interextrabold"
+            android:gravity="center_horizontal"
+            android:text="Resumen de asistencia"
+            android:textColor="#143751"
+            android:textSize="32sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButtonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/iconarrowleft"
+                app:tint="#143751" />
+
+            <TextView
+                android:id="@+id/textBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interregular"
+                android:text="Volver"
+                android:textColor="#143751" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/iconcalendary"
+                app:tint="#143751" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="---------------------------------------------------------------------------------------"
+            android:textColor="#143751" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/interextrabold"
+                    android:text="Asignaturas"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="M01"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="M02"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="M03"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="Total"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="80dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/interextrabold"
+                    android:text="Asistencia"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="100%"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="70%"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="90%"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/interregular"
+                    android:gravity="center"
+                    android:text="70%"
+                    android:textColor="#143751"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalles" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
