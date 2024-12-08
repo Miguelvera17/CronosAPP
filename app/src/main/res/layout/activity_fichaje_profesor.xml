@@ -20,7 +20,7 @@
             android:id="@+id/fragmentContainer2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:name="com.example.cronosapp.StudentFragment"
+            android:name="com.example.cronosapp.TeacherFragment"
             app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

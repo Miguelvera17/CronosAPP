@@ -77,6 +77,11 @@ class TopFragment : Fragment() {
                         true
                     }
                     R.id.option6 -> {
+                        val intent = Intent(requireContext(), ClasesActivity::class.java)
+                        startActivity(intent)
+                        true
+                    }
+                    R.id.option7 -> {
                         val intent = Intent(requireContext(), MainActivity::class.java)
                         startActivity(intent)
                         true

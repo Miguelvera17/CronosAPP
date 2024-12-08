@@ -29,7 +29,7 @@
     <color name="md_theme_inverseOnSurface">#EDF1F5</color>
     <color name="md_theme_inversePrimary">#91CEF4</color>
     <color name="md_theme_primaryFixed">#C5E7FF</color>
-    <color name="md_theme_onPrimaryFixed">#001E2D</color>
+    <color name="md_theme_onPrimaryFixed">#FFFFFF</color>
     <color name="md_theme_primaryFixedDim">#91CEF4</color>
     <color name="md_theme_onPrimaryFixedVariant">#004C6A</color>
     <color name="md_theme_secondaryFixed">#D2E5F4</color>

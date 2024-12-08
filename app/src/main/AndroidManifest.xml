@@ -13,6 +13,12 @@
         android:theme="@style/Base.Theme.CronosAPP"
         tools:targetApi="31">
         <activity
+            android:name=".AsistenciaClaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClasesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResumenAsistenciaActivity"
             android:exported="false" />
         <activity

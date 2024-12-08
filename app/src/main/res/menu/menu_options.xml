@@ -15,8 +15,13 @@
     <item
         android:id="@+id/option5"
         android:title="Perfil" />
+
     <item
         android:id="@+id/option6"
+        android:title="Mis Clases" />
+
+    <item
+        android:id="@+id/option7"
         android:title="Cerrar sesión" />
 
 </menu>
