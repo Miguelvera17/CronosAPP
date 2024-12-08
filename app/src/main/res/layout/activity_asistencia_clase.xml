@@ -174,24 +174,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                app:buttonTint="#0AC70A"
                 android:layout_weight="1"/>
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:buttonTint="#F09413"
                 android:layout_weight="1" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:buttonTint="#F90808"
                 android:layout_weight="1"/>
 
             <RadioButton
                 android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:buttonTint="#0878F9"
                 android:layout_weight="1"/>
         </LinearLayout>
 
@@ -214,24 +218,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                app:buttonTint="#0AC70A"
                 android:layout_weight="1"/>
 
             <RadioButton
                 android:id="@+id/radioButton6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:buttonTint="#F09413"
                 android:layout_weight="1" />
 
             <RadioButton
                 android:id="@+id/radioButton7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:buttonTint="#F90808"
                 android:layout_weight="1"/>
 
             <RadioButton
                 android:id="@+id/radioButton8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:buttonTint="#0878F9"
                 android:layout_weight="1"/>
         </LinearLayout>
 
