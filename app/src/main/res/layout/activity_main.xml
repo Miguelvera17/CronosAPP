@@ -109,7 +109,7 @@
             android:textColorHint="#7D8489"
             android:fontFamily="@font/interregular"
             android:background="@drawable/edit_text_background"
-            android:inputType="text" />
+            android:inputType="textPassword" />
 
         <TextView
             android:id="@+id/textView"
@@ -132,7 +132,7 @@
             android:layout_width="111dp"
             android:layout_height="70dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="#2A2E43"
+            android:backgroundTint="#143751"
             android:padding="10dp"
             android:text="Acceder"
             android:fontFamily="@font/interregular"

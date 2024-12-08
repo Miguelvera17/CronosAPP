@@ -2,7 +2,9 @@ package com.example.cronosapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,9 +18,15 @@ class AsistenciaClaseActivity : AppCompatActivity() {
 
         val bttonBack : ImageButton = findViewById(R.id.imgButtonBack)
         bttonBack.setOnClickListener {
-            val intent = Intent(this, FichajeProfesorActivity::class.java)
+            val intent = Intent(this, ClasesActivity::class.java)
             startActivity(intent)
         }
 
+        val bttonSave : Button = findViewById(R.id.buttonSave)
+        bttonSave.setOnClickListener {
+            val intent = Intent(this, ClasesActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "Asistencia guardada", Toast.LENGTH_SHORT).show()
+        }
     }
 }

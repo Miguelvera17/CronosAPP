@@ -236,6 +236,7 @@
                 android:id="@+id/buttonDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#143751"
                 android:text="Detalles" />
         </LinearLayout>
 
