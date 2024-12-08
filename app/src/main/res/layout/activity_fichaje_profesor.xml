@@ -29,8 +29,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="180dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView6"
@@ -62,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="100% asistencia"
+                android:text="Ficho correctamente"
                 android:textColor="#4CB24F"
                 android:textSize="12sp" />
 
@@ -85,7 +84,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/interextrabold"
-            android:text="Mi asitencia de hoy"
+            android:text="Mis fichajes de hoy"
             android:textColor="#143751"
             android:textSize="17sp" />
 
@@ -126,14 +125,6 @@
                     android:textColor="#143751"
                     android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/interregular"
-                    android:text="Clase: Programación"
-                    android:textColor="#143751"
-                    android:textSize="12sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -174,15 +165,6 @@
                     android:text="Hora: 09:15:45"
                     android:textColor="#143751"
                     android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/interregular"
-                    android:text="Clase: Programación"
-                    android:textColor="#143751"
-                    android:textSize="12sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -204,7 +186,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/interextrabold"
-            android:text="Notificaiones"
+            android:text="Notificaciones"
             android:textColor="#143751"
             android:textSize="17sp" />
 

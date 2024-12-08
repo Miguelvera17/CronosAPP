@@ -28,20 +28,15 @@ class ResumenAsistenciaActivity : AppCompatActivity() {
             Toast.makeText(this, "En desarrollo", Toast.LENGTH_SHORT).show()
         }
 
-        // Obtener referencia al Spinner
         val spinner: Spinner = findViewById(R.id.spinner)
 
-        // Crear un ArrayAdapter usando el array de cadenas y un diseño de spinner predeterminado
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.time_options,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Especificar el diseño que se usará cuando aparezcan las opciones desplegables
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
-
-        // Aplicar el adaptador al spinner
         spinner.adapter = adapter
     }
 }

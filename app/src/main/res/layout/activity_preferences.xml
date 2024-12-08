@@ -83,6 +83,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginStart="100dp"
+            android:backgroundTint="#143751"
+            android:textColor="#FFFFFF"
             android:layout_marginEnd="100dp"
             android:text="Toogle theme" />
 

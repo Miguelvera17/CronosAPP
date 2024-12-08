@@ -204,7 +204,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/interextrabold"
-            android:text="Notificaiones"
+            android:text="Notificaciones"
             android:textColor="#143751"
             android:textSize="17sp" />
 
