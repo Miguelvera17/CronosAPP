@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/interextrabold"
             android:gravity="center_horizontal"
-            android:text="Resumen de asistencia"
+            android:text="@string/resumen_de_asistencia"
             android:textColor="#143751"
             android:textSize="32sp" />
 
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/interregular"
-                android:text="Volver"
+                android:text="@string/volver"
                 android:textColor="#143751" />
         </LinearLayout>
 
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
-            android:text="---------------------------------------------------------------------------------------"
+            android:text="@string/line5"
             android:textColor="#143751" />
 
         <LinearLayout
@@ -114,7 +114,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interextrabold"
-                    android:text="Asignaturas"
+                    android:text="@string/asignaturas"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -125,7 +125,7 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/interregular"
                     android:gravity="center"
-                    android:text="M01"
+                    android:text="@string/m01"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -137,7 +137,7 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/interregular"
                     android:gravity="center"
-                    android:text="M02"
+                    android:text="@string/m02"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -148,7 +148,7 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/interregular"
                     android:gravity="center"
-                    android:text="M03"
+                    android:text="@string/m03"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -159,7 +159,7 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/interregular"
                     android:gravity="center"
-                    android:text="Total"
+                    android:text="@string/total"
                     android:textColor="#143751"
                     android:textSize="17sp" />
             </LinearLayout>
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interextrabold"
-                    android:text="Asistencia"
+                    android:text="@string/asistencia"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -237,7 +237,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#143751"
-                android:text="Detalles" />
+                android:text="@string/detalles" />
         </LinearLayout>
 
     </LinearLayout>

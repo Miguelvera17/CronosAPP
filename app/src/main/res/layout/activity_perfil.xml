@@ -37,7 +37,7 @@ tools:context=".PerfilActivity">
             android:layout_height="wrap_content"
             android:fontFamily="@font/interextrabold"
             android:gravity="center"
-            android:text="Perfil"
+            android:text="@string/perfil"
             android:textColor="#143751"
             android:textSize="32sp" />
 
@@ -61,7 +61,7 @@ tools:context=".PerfilActivity">
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/interregular"
                 android:textColor="#143751"
-                android:text="Volver" />
+                android:text="@string/volver" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,7 +81,7 @@ tools:context=".PerfilActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interextrabold"
-                    android:text="Nombre: "
+                    android:text="@string/nombre"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -90,7 +90,7 @@ tools:context=".PerfilActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:text="Luis Duarte"
+                    android:text="@string/luis_duarte"
                     android:textColor="#143751"
                     android:textSize="12sp" />
 
@@ -100,7 +100,7 @@ tools:context=".PerfilActivity">
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/interextrabold"
-                    android:text="Correo: "
+                    android:text="@string/correo"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -109,7 +109,7 @@ tools:context=".PerfilActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:text="luis_duarte@escuela.com"
+                    android:text="@string/luis_duarte_escuela_com"
                     android:textColor="#143751"
                     android:textSize="12sp" />
 
@@ -119,7 +119,7 @@ tools:context=".PerfilActivity">
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/interextrabold"
-                    android:text="Grado - Grupo:"
+                    android:text="@string/grado_grupo"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -128,7 +128,7 @@ tools:context=".PerfilActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:text="DAM - A"
+                    android:text="@string/dam_a"
                     android:textColor="#143751"
                     android:textSize="12sp" />
 
@@ -138,7 +138,7 @@ tools:context=".PerfilActivity">
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/interextrabold"
-                    android:text="Identificador:"
+                    android:text="@string/identificador"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -147,7 +147,7 @@ tools:context=".PerfilActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:text="00001"
+                    android:text="@string/_00001"
                     android:textColor="#143751"
                     android:textSize="12sp" />
 
@@ -157,7 +157,7 @@ tools:context=".PerfilActivity">
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/interextrabold"
-                    android:text="Rol:"
+                    android:text="@string/rol"
                     android:textColor="#143751"
                     android:textSize="17sp" />
 
@@ -166,7 +166,7 @@ tools:context=".PerfilActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:text="Alumno"
+                    android:text="@string/alumno"
                     android:textColor="#143751"
                     android:textSize="12sp" />
 
@@ -192,7 +192,7 @@ tools:context=".PerfilActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:text="Cambiar foto"
+                    android:text="@string/cambiar_foto"
                     android:textColor="#143751"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -212,7 +212,7 @@ tools:context=".PerfilActivity">
                 android:layout_height="wrap_content"
                 android:backgroundTint="#143751"
                 android:fontFamily="@font/interregular"
-                android:text="Salir" />
+                android:text="@string/salir" />
 
             <Button
                 android:id="@+id/buttonModify"
@@ -221,7 +221,7 @@ tools:context=".PerfilActivity">
                 android:backgroundTint="#143751"
                 android:layout_marginStart="50dp"
                 android:fontFamily="@font/interregular"
-                android:text="Modificar" />
+                android:text="@string/modificar" />
         </LinearLayout>
 
     </LinearLayout>

@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/interextrabold"
         android:gravity="center"
-        android:text="Mis Clases"
+        android:text="@string/mis_clases"
         android:textColor="#143751"
         android:textSize="32sp" />
 
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/interregular"
             android:textColor="#143751"
-            android:text="Volver" />
+            android:text="@string/volver" />
         </LinearLayout>
 
         <TextView
@@ -73,7 +73,7 @@
             android:fontFamily="@font/interregular"
             android:textColor="#143751"
             android:layout_marginTop="50dp"
-            android:text="M01 - UF1 - A - 8:00 h - (L - J)" />
+            android:text="@string/m01_uf1_a_8_00_h_l_j_" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#143751"
-                android:text="Editar" />
+                android:text="@string/editar" />
 
             <Button
                 android:id="@+id/buttonList"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#143751"
-                android:text="Pasar lista" />
+                android:text="@string/pasar_lista" />
         </LinearLayout>
 
         <TextView
@@ -107,7 +107,7 @@
             android:fontFamily="@font/interregular"
             android:textColor="#143751"
             android:layout_marginTop="30dp"
-            android:text="M01 - UF1 - B - 10:00 h - (L - J)" />
+            android:text="@string/m01_uf1_b_10_00_h_l_j" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#143751"
-                android:text="Editar" />
+                android:text="@string/editar" />
 
             <Button
                 android:id="@+id/buttonList2"
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#143751"
-                android:text="Pasar lista" />
+                android:text="@string/pasar_lista" />
         </LinearLayout>
 
         <TextView
@@ -141,7 +141,7 @@
             android:fontFamily="@font/interregular"
             android:layout_marginTop="30dp"
             android:textColor="#143751"
-            android:text="M03 - UF1 - A - 8:00 h - (Ma - Mi)" />
+            android:text="@string/m03_uf1_a_8_00_h_ma_mi" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#143751"
-                android:text="Editar" />
+                android:text="@string/editar" />
 
             <Button
                 android:id="@+id/buttonList3"
@@ -164,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#143751"
-                android:text="Pasar lista" />
+                android:text="@string/pasar_lista" />
         </LinearLayout>
 
     </LinearLayout>

@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/interregular"
             android:textColor="#143751"
-            android:text="Volver" />
+            android:text="@string/volver" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,7 +93,7 @@
                     android:fontFamily="@font/interregular"
                     android:textColor="#143751"
                     android:textSize="17sp"
-                    android:text="Clase:" />
+                    android:text="@string/clase" />
 
                 <TextView
                     android:id="@+id/text"
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
                     android:textColor="#143751"
-                    android:text="M01 - UF1 - A - 8:00 h - (L - J)" />
+                    android:text="@string/m01_uf1_a_8_00_h_l_j" />
             </LinearLayout>
 
         </LinearLayout>
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
-                android:text="Alumno"
+                android:text="@string/alumno"
                 android:textColor="#143751" />
 
             <TextView
@@ -126,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Presente" />
+                android:text="@string/presente" />
 
             <TextView
                 android:id="@+id/textView49"
@@ -135,7 +135,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
                 android:textColor="#143751"
-                android:text="Retraso" />
+                android:text="@string/retraso" />
 
             <TextView
                 android:id="@+id/textView50"
@@ -144,7 +144,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
                 android:textColor="#143751"
-                android:text="Falta" />
+                android:text="@string/falta" />
 
             <TextView
                 android:id="@+id/textView51"
@@ -153,7 +153,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
                 android:textColor="#143751"
-                android:text="F. justi" />
+                android:text="@string/f_justi" />
         </LinearLayout>
 
         <LinearLayout
@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
-                android:text="Miguel Vera"
+                android:text="@string/miguel_vera"
                 android:textColor="#143751" />
 
             <RadioButton
@@ -213,7 +213,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
-                android:text="Pau Pich"
+                android:text="@string/pau_pich"
                 android:textColor="#143751" />
 
             <RadioButton
@@ -252,7 +252,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#143751"
             android:layout_margin="80dp"
-            android:text="Guardar" />
+            android:text="@string/guardar" />
 
     </LinearLayout>
 

@@ -39,7 +39,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/interextrabold"
-            android:text="Estado"
+            android:text="@string/estado"
             android:textColor="#143751"
             android:textSize="17sp" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="100% asistencia"
+                android:text="@string/_100_asistencia"
                 android:textColor="#4CB24F"
                 android:textSize="12sp" />
 
@@ -76,7 +76,7 @@
             android:paddingEnd="40dp"
             android:layout_marginTop="30dp"
             android:textColor="#143751"
-            android:text="---------------------------------------------------------------------------------------" />
+            android:text="@string/linea" />
 
         <TextView
             android:id="@+id/textView12"
@@ -85,7 +85,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/interextrabold"
-            android:text="Mi asitencia de hoy"
+            android:text="@string/mi_asitencia_de_hoy"
             android:textColor="#143751"
             android:textSize="17sp" />
 
@@ -115,7 +115,7 @@
                     android:textColor="#143751"
                     android:fontFamily="@font/interregular"
                     android:textSize="12sp"
-                    android:text="Dia:27 de noviembre 2024" />
+                    android:text="@string/dia_27_de_noviembre_2024" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -124,7 +124,7 @@
                     android:textColor="#143751"
                     android:fontFamily="@font/interregular"
                     android:textSize="12sp"
-                    android:text="Hora: 09:15:45" />
+                    android:text="@string/hora_09_15_45" />
 
                 <TextView
                     android:id="@+id/textView9"
@@ -133,7 +133,7 @@
                     android:textColor="#143751"
                     android:fontFamily="@font/interregular"
                     android:textSize="12sp"
-                    android:text="Clase: Programación" />
+                    android:text="@string/clase_programaci_n" />
             </LinearLayout>
 
         </LinearLayout>
@@ -164,7 +164,7 @@
                     android:textColor="#143751"
                     android:fontFamily="@font/interregular"
                     android:textSize="12sp"
-                    android:text="Dia:27 de noviembre 2024" />
+                    android:text="@string/dia_27_de_noviembre_2024_" />
 
                 <TextView
                     android:id="@+id/textView13"
@@ -173,7 +173,7 @@
                     android:textColor="#143751"
                     android:fontFamily="@font/interregular"
                     android:textSize="12sp"
-                    android:text="Hora: 09:15:45" />
+                    android:text="@string/hora_09_15_45_" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -182,7 +182,7 @@
                     android:textColor="#143751"
                     android:fontFamily="@font/interregular"
                     android:textSize="12sp"
-                    android:text="Clase: Programación" />
+                    android:text="@string/clase_programaci_nn" />
             </LinearLayout>
 
         </LinearLayout>
@@ -195,7 +195,7 @@
             android:paddingEnd="40dp"
             android:layout_marginTop="30dp"
             android:textColor="#143751"
-            android:text="---------------------------------------------------------------------------------------" />
+            android:text="@string/linea" />
 
         <TextView
             android:id="@+id/textView17"
@@ -204,7 +204,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/interextrabold"
-            android:text="Notificaciones"
+            android:text="@string/notificaciones"
             android:textColor="#143751"
             android:textSize="17sp" />
 
@@ -229,7 +229,7 @@
                 android:textColor="#143751"
                 android:fontFamily="@font/interregular"
                 android:textSize="12sp"
-                android:text="Buzon vacio" />
+                android:text="@string/buzon_vacio" />
         </LinearLayout>
 
     </LinearLayout>
