@@ -65,7 +65,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/interregular"
-                            android:text="@string/ultimo_çacceso_27_noviembre_2024_15_30_00_"
+                            android:text="@string/ultimo_acceso_27_noviembre_2024_15_30_00"
                             android:textColor="#31A9CF"
                             android:textSize="12sp" />
                     </LinearLayout>
