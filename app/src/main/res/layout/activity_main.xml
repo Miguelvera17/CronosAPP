@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0F4FA"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
     tools:context=".MainActivity">
 
     <LinearLayout
