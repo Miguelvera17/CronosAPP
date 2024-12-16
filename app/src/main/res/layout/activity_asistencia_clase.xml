@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
-                android:text="@string/miguel_vera"
+                android:text="Anna V."
                 android:textColor="#143751" />
 
             <RadioButton
@@ -213,7 +213,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/interregular"
-                android:text="@string/pau_pich"
+                android:text="Raul T."
                 android:textColor="#143751" />
 
             <RadioButton

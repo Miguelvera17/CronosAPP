@@ -28,5 +28,7 @@ class AsistenciaClaseActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this, "Asistencia guardada", Toast.LENGTH_SHORT).show()
         }
+
+
     }
 }
