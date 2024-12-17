@@ -31,7 +31,29 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@id/fragmentContainer2"
         android:layout_marginTop="210dp"
+        android:gravity=""
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#143751"
+                android:text="Fichar entrada" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F44336"
+                android:text="Fichar salida" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView6"
@@ -73,7 +95,7 @@
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
             android:text="@string/line"
@@ -127,6 +149,15 @@
                     android:textColor="#143751"
                     android:textSize="12sp" />
 
+                <TextView
+                    android:id="@+id/textView52"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#143751"
+                    android:fontFamily="@font/interregular"
+                    android:textSize="12sp"
+                    android:text="Entrada" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -164,9 +195,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:text="@string/hora_09_15_456"
+                    android:text="Hora: 13:30:25"
                     android:textColor="#143751"
                     android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView53"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#143751"
+                    android:fontFamily="@font/interregular"
+                    android:textSize="12sp"
+                    android:text="Salida" />
             </LinearLayout>
 
         </LinearLayout>
@@ -175,7 +215,7 @@
             android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
             android:text="@string/line2"
@@ -221,7 +261,7 @@
             android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
             android:text="@string/line3"
