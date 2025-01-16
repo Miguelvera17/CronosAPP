@@ -19,150 +19,159 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:name="com.example.cronosapp.StudentFragment"
         app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="210dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="@font/interextrabold"
-            android:textColor="#143751"
-            android:textSize="32sp"
-            android:text="@string/preferencias" />
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButtonBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/iconarrowleft"
-                app:tint="#143751" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/textView25"
-                android:layout_width="wrap_content"
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/interregular"
-                android:text="@string/volver"
-                android:textColor="#143751" />
+                android:gravity="center"
+                android:fontFamily="@font/interextrabold"
+                android:textColor="#143751"
+                android:textSize="32sp"
+                android:text="@string/preferencias" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageButtonBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/iconarrowleft"
+                    app:tint="#143751" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/interregular"
+                    android:text="@string/volver"
+                    android:textColor="#143751" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interextrabold"
+                android:gravity="center"
+                android:textColor="#143751"
+                android:textSize="17sp"
+                android:layout_marginTop="25dp"
+                android:text="@string/tema_oscuro" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="100dp"
+                android:backgroundTint="#143751"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="100dp"
+                android:text="Toogle theme" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interextrabold"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:textColor="#143751"
+                android:textSize="17sp"
+                android:text="@string/idioma" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interextrabold"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="#143751"
+                android:textSize="17sp"
+                android:text="@string/tama_o_de_letra" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="50dp"
+                    android:textSize="10sp"
+                    android:text="@string/a" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:text="A" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:text="A" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:text="A" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"/>
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/interextrabold"
-            android:gravity="center"
-            android:textColor="#143751"
-            android:textSize="17sp"
-            android:layout_marginTop="25dp"
-            android:text="@string/tema_oscuro" />
-
-        <ToggleButton
-            android:id="@+id/toggleButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="100dp"
-            android:backgroundTint="#143751"
-            android:textColor="#FFFFFF"
-            android:layout_marginEnd="100dp"
-            android:text="Toogle theme" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/interextrabold"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:textColor="#143751"
-            android:textSize="17sp"
-            android:text="@string/idioma" />
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_margin="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/interextrabold"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:textColor="#143751"
-            android:textSize="17sp"
-            android:text="@string/tama_o_de_letra" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="50dp"
-                android:textSize="10sp"
-                android:text="@string/a" />
-
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:layout_weight="1"
-                android:text="A" />
-
-            <TextView
-                android:id="@+id/textView30"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:text="A" />
-
-            <TextView
-                android:id="@+id/textView31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="25sp"
-                android:text="A" />
-        </LinearLayout>
-
-        <SeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"/>
-
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

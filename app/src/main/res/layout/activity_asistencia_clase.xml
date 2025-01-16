@@ -9,266 +9,274 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
+        android:name="com.example.cronosapp.TopFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:name="com.example.cronosapp.TopFragment"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer2"
+        android:name="com.example.cronosapp.TeacherFragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer" />
+
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:name="com.example.cronosapp.TeacherFragment"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="210dp"
-        android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/interextrabold"
-        android:gravity="center"
-        android:text="Asistencia"
-        android:textColor="#143751"
-        android:textSize="32sp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/imgButtonBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/iconarrowleft"
-            app:tint="#143751" />
-
-        <TextView
-            android:id="@+id/textBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/interregular"
-            android:textColor="#143751"
-            android:text="@string/volver" />
-        </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <ImageView
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textProfile"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/iconclase"
-                app:tint="#143751" />
+                android:fontFamily="@font/interextrabold"
+                android:gravity="center"
+                android:text="Asistencia"
+                android:textColor="#143751"
+                android:textSize="32sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imgButtonBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/iconarrowleft"
+                    app:tint="#143751" />
 
                 <TextView
-                    android:id="@+id/textView46"
+                    android:id="@+id/textBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:textColor="#143751"
-                    android:textSize="17sp"
-                    android:text="@string/clase" />
-
-                <TextView
-                    android:id="@+id/text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/interregular"
-                    android:textColor="#143751"
-                    android:text="@string/m01_uf1_a_8_00_h_l_j" />
+                    android:text="@string/volver"
+                    android:textColor="#143751" />
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView47"
-                android:layout_width="100dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/interregular"
-                android:text="@string/alumno"
-                android:textColor="#143751" />
-
-            <TextView
-                android:id="@+id/textView48"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/presente" />
-
-            <TextView
-                android:id="@+id/textView49"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/interregular"
-                android:textColor="#143751"
-                android:text="@string/retraso" />
-
-            <TextView
-                android:id="@+id/textView50"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/interregular"
-                android:textColor="#143751"
-                android:text="@string/falta" />
-
-            <TextView
-                android:id="@+id/textView51"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/interregular"
-                android:textColor="#143751"
-                android:text="@string/f_justi" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textAlumno"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/interregular"
-                android:text="Anna V."
-                android:textColor="#143751" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radioButton"
+                <ImageView
+                    android:id="@+id/imageButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:buttonTint="#0AC70A"
-                    android:layout_weight="1"/>
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/iconclase"
+                    app:tint="#143751" />
 
-                <RadioButton
-                    android:id="@+id/radioButton2"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:buttonTint="#F09413"
-                    android:layout_weight="1" />
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/radioButton3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonTint="#F90808"
-                    android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/interregular"
+                        android:text="@string/clase"
+                        android:textColor="#143751"
+                        android:textSize="17sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButton4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonTint="#0878F9"
-                    android:layout_weight="1"/>
-            </RadioGroup>
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/interregular"
+                        android:text="@string/m01_uf1_a_8_00_h_l_j"
+                        android:textColor="#143751" />
+                </LinearLayout>
 
+            </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textAlumno2"
-                android:layout_width="130dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/interregular"
-                android:text="Raul T."
-                android:textColor="#143751" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginStart="10dp"
                 android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/radioButton5"
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/interregular"
+                    android:text="@string/alumno"
+                    android:textColor="#143751" />
+
+                <TextView
+                    android:id="@+id/textView48"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    app:buttonTint="#0AC70A"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:text="@string/presente" />
 
-                <RadioButton
-                    android:id="@+id/radioButton6"
+                <TextView
+                    android:id="@+id/textView49"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:buttonTint="#F09413"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:fontFamily="@font/interregular"
+                    android:text="@string/retraso"
+                    android:textColor="#143751" />
 
-                <RadioButton
-                    android:id="@+id/radioButton7"
+                <TextView
+                    android:id="@+id/textView50"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:buttonTint="#F90808"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:fontFamily="@font/interregular"
+                    android:text="@string/falta"
+                    android:textColor="#143751" />
 
-                <RadioButton
-                    android:id="@+id/radioButton8"
+                <TextView
+                    android:id="@+id/textView51"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:buttonTint="#0878F9"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:fontFamily="@font/interregular"
+                    android:text="@string/f_justi"
+                    android:textColor="#143751" />
+            </LinearLayout>
 
-            </RadioGroup>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textAlumno"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/interregular"
+                    android:text="Anna V."
+                    android:textColor="#143751" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="#0AC70A" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="#F09413" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="#F90808" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="#0878F9" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textAlumno2"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/interregular"
+                    android:text="Raul T."
+                    android:textColor="#143751" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:buttonTint="#0AC70A" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="#F09413" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="#F90808" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:buttonTint="#0878F9" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="80dp"
+                android:backgroundTint="#143751"
+                android:text="@string/guardar" />
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/buttonSave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#143751"
-            android:layout_margin="80dp"
-            android:text="@string/guardar" />
-
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
