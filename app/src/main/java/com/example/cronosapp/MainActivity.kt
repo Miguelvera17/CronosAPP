@@ -7,12 +7,17 @@ import android.widget.Button
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val screenSplash : SplashScreen =  installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        Thread.sleep(2000)
+        screenSplash.setKeepOnScreenCondition{false}
         val button: Button = findViewById(R.id.loginButton)
         button.setOnClickListener {
             val intent = Intent(this, FichajeAlumnoActivity::class.java)
