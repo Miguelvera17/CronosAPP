@@ -18,7 +18,7 @@ class ClasesActivity : AppCompatActivity() {
 
         val bttonBack : ImageButton = findViewById(R.id.imgButtonBack)
         bttonBack.setOnClickListener {
-            val intent = Intent(this, FichajeProfesorActivity::class.java)
+            val intent = Intent(this, MenuDrawerActivity::class.java)
             startActivity(intent)
         }
 

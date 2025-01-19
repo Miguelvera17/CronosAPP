@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         screenSplash.setKeepOnScreenCondition{false}
         val button: Button = findViewById(R.id.loginButton)
         button.setOnClickListener {
-            val intent = Intent(this, FichajeAlumnoActivity::class.java)
+            val intent = Intent(this, MenuDrawerActivity::class.java)
             startActivity(intent)
         }
 

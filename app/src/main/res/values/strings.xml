@@ -89,6 +89,9 @@
     <string name="ultimo_acceso_27_noviembre_2024_15_30_00">Ultimo acceso: 27 noviembre 2024, 15:30:00</string>
     <string name="profesor_david">Profesor: David</string>
     <string name="ultimo_acceso_27_noviembre_2024_15_30_00_">Ultimo acceso: 27 noviembre 2024, 15:30:00</string>
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+
 
     <string-array name="language_options">
         <item>Español</item>

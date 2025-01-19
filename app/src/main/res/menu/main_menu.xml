@@ -6,17 +6,21 @@
             android:title="Home"
             android:icon="@drawable/home_icon"/>
         <item
-            android:id="@+id/nav_cycle"
+            android:id="@+id/nav_gest"
             android:title="Gestión horaria"
-            android:icon="@drawable/home_icon"/>
+            android:icon="@drawable/iconcalendary"/>
         <item
-            android:id="@+id/nav_bus"
+            android:id="@+id/nav_res"
             android:title="Resumen asistencia"
-            android:icon="@drawable/home_icon"/>
+            android:icon="@drawable/iconclase"/>
         <item
-            android:id="@+id/nav_plane"
-            android:title="Preferencias"
-            android:icon="@drawable/home_icon"/>
+            android:id="@+id/nav_clases"
+            android:title="Mis Clases"
+            android:icon="@drawable/icontutor"/>
+        <item
+            android:id="@+id/nav_exit"
+            android:title="Salir"
+            android:icon="@drawable/iconexit"/>
     </group>
 
 </menu>

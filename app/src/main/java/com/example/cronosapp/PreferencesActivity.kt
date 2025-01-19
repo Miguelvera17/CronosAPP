@@ -21,7 +21,7 @@ class PreferencesActivity : AppCompatActivity() {
         val buttonBack: ImageButton = findViewById(R.id.imageButtonBack)
 
         buttonBack.setOnClickListener {
-            val intent = Intent(this, FichajeAlumnoActivity::class.java)
+            val intent = Intent(this, MenuDrawerActivity::class.java)
             startActivity(intent)
         }
 

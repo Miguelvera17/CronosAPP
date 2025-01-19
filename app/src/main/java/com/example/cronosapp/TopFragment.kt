@@ -42,55 +42,55 @@ class TopFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_top, container, false)
         val imgButtonInfo : ImageButton = view.findViewById(R.id.imgInfo)
 
-        val imgMenu: ImageButton = view.findViewById(R.id.imgMenu)
+        //val imgMenu: ImageButton = view.findViewById(R.id.imgMenu)
 
         imgButtonInfo.setOnClickListener {
             Toast.makeText(requireContext(), "En desarrollo", Toast.LENGTH_SHORT).show()
         }
 
-        imgMenu.setOnClickListener {
-            val popupMenu = PopupMenu(requireContext(), imgMenu)
-            popupMenu.menuInflater.inflate(R.menu.menu_options, popupMenu.menu)
-            popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
-                when (menuItem.itemId) {
-                    R.id.option1 -> {
-                        true
-                    }
-                    R.id.option2 -> {
-                        val intent = Intent(requireContext(), FichajeAlumnoActivity::class.java)
-                        startActivity(intent)
-                        true
-                    }
-                    R.id.option3 -> {
-                        val intent = Intent(requireContext(), ResumenAsistenciaActivity::class.java)
-                        startActivity(intent)
-                        true
-                    }
-                    R.id.option4 -> {
-                        val intent = Intent(requireContext(), PreferencesActivity::class.java)
-                        startActivity(intent)
-                        true
-                    }
-                    R.id.option5 -> {
-                        val intent = Intent(requireContext(), PerfilActivity::class.java)
-                        startActivity(intent)
-                        true
-                    }
-                    R.id.option6 -> {
-                        val intent = Intent(requireContext(), ClasesActivity::class.java)
-                        startActivity(intent)
-                        true
-                    }
-                    R.id.option7 -> {
-                        val intent = Intent(requireContext(), MainActivity::class.java)
-                        startActivity(intent)
-                        true
-                    }
-                    else -> false
-                }
-            }
-            popupMenu.show()
-        }
+//        imgMenu.setOnClickListener {
+//            val popupMenu = PopupMenu(requireContext(), imgMenu)
+//            popupMenu.menuInflater.inflate(R.menu.menu_options, popupMenu.menu)
+//            popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
+//                when (menuItem.itemId) {
+//                    R.id.option1 -> {
+//                        true
+//                    }
+//                    R.id.option2 -> {
+//                        val intent = Intent(requireContext(), FichajeAlumnoActivity::class.java)
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    R.id.option3 -> {
+//                        val intent = Intent(requireContext(), ResumenAsistenciaActivity::class.java)
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    R.id.option4 -> {
+//                        val intent = Intent(requireContext(), PreferencesActivity::class.java)
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    R.id.option5 -> {
+//                        val intent = Intent(requireContext(), PerfilActivity::class.java)
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    R.id.option6 -> {
+//                        val intent = Intent(requireContext(), ClasesActivity::class.java)
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    R.id.option7 -> {
+//                        val intent = Intent(requireContext(), MainActivity::class.java)
+//                        startActivity(intent)
+//                        true
+//                    }
+//                    else -> false
+//                }
+//            }
+//            popupMenu.show()
+//        }
 
         return view
     }

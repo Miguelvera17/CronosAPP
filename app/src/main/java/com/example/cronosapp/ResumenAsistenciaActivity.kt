@@ -21,7 +21,7 @@ class ResumenAsistenciaActivity : AppCompatActivity() {
         val buttonDetalle : Button = findViewById(R.id.buttonDetail)
 
         imgButtonBack.setOnClickListener {
-            val intent = Intent(this, FichajeAlumnoActivity::class.java)
+            val intent = Intent(this, MenuDrawerActivity::class.java)
             startActivity(intent)
         }
         buttonDetalle.setOnClickListener {

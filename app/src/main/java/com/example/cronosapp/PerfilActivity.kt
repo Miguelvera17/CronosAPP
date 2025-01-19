@@ -25,7 +25,7 @@ class PerfilActivity : AppCompatActivity() {
         }
 
         buttonVolver.setOnClickListener {
-            val intent = Intent(this, FichajeAlumnoActivity::class.java)
+            val intent = Intent(this, MenuDrawerActivity::class.java)
             startActivity(intent)
         }
 
