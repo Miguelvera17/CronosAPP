@@ -24,10 +24,10 @@ class AsistenciaClaseActivity : AppCompatActivity() {
         val bttonBack : ImageButton = findViewById(R.id.imgButtonBack)
         bttonBack.setOnClickListener {
             val intent = Intent(this, ClasesActivity::class.java)
-            startActivity(intent)
+           startActivity(intent)
         }
 
-       val bttonSave : Button = findViewById(R.id.buttonSave)
+        val bttonSave : Button = findViewById(R.id.buttonSave)
         bttonSave.setOnClickListener {
             val intent = Intent(this, ClasesActivity::class.java)
             startActivity(intent)
