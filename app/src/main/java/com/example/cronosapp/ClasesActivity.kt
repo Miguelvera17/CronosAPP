@@ -24,7 +24,9 @@ class ClasesActivity : AppCompatActivity() {
 
         val butEdit1 : Button = findViewById(R.id.buttonEdit)
         butEdit1.setOnClickListener {
-            Toast.makeText(this, "En desarrollo", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, RecicleActivity::class.java)
+            startActivity(intent)
+//            Toast.makeText(this, "En desarrollo", Toast.LENGTH_SHORT).show()
         }
 
         val butEdit2 : Button = findViewById(R.id.buttonEdit2)

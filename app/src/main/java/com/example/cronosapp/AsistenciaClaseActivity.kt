@@ -11,11 +11,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.cronosapp.adapter.RecicleAdapter
 
 class AsistenciaClaseActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_asistencia_clase)
 
         val bttonBack : ImageButton = findViewById(R.id.imgButtonBack)
@@ -24,7 +27,7 @@ class AsistenciaClaseActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val bttonSave : Button = findViewById(R.id.buttonSave)
+       val bttonSave : Button = findViewById(R.id.buttonSave)
         bttonSave.setOnClickListener {
             val intent = Intent(this, ClasesActivity::class.java)
             startActivity(intent)
