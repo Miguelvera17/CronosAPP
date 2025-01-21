@@ -161,7 +161,11 @@
                     android:text="@string/f_justi"
                     android:textColor="#143751" />
             </LinearLayout>
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_lista_alumnnos_asistencia"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                tools:listitem="@layout/item_student"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
