@@ -54,4 +54,8 @@
         <item name="windowSplashScreenAnimationDuration">300</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.CronosAPP</item>
     </style>
+
+    <style name="Theme.CronosAPP.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/backgroundSplash</item>
+    </style>
 </resources>

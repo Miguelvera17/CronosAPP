@@ -164,120 +164,19 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_lista_alumnnos_asistencia"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="400dp"
                 tools:listitem="@layout/item_student"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textAlumno"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/interregular"
-                    android:text="Anna V."
-                    android:textColor="#143751" />
-
-                <RadioGroup
-                    android:id="@+id/radioGroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/radioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="#0AC70A" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="#F09413" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="#F90808" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="#0878F9" />
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textAlumno2"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/interregular"
-                    android:text="Raul T."
-                    android:textColor="#143751" />
-
-                <RadioGroup
-                    android:id="@+id/radioGroup2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/radioButton5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        app:buttonTint="#0AC70A" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="#F09413" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="#F90808" />
-
-                    <RadioButton
-                        android:id="@+id/radioButton8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:buttonTint="#0878F9" />
-
-                </RadioGroup>
-
-            </LinearLayout>
 
             <Button
                 android:id="@+id/buttonSave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_lista_alumnnos_asistencia"
                 android:backgroundTint="#143751"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
                 android:text="@string/guardar" />
 
         </LinearLayout>

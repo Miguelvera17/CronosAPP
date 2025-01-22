@@ -13,6 +13,9 @@
         android:theme="@style/Base.Theme.CronosAPP"
         tools:targetApi="31">
         <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecicleActivity"
             android:exported="false" />
         <activity
