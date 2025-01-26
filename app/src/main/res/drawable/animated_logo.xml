@@ -4,5 +4,5 @@
 
     <target
         android:name="icon"
-        android:animation="@anim/logo_animation" />
+        android:animation="@anim/fade_in" />
 </animated-vector>
