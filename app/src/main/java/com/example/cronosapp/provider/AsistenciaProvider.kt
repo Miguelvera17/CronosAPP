@@ -1,4 +1,4 @@
-package com.example.cronosapp
+package com.example.cronosapp.provider
 
 object AsistenciaProvider {
     val asistenciaList = listOf(

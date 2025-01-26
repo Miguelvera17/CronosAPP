@@ -9,29 +9,29 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
+        android:name="com.example.cronosapp.TopFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:name="com.example.cronosapp.TopFragment"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer2"
+        android:name="com.example.cronosapp.TeacherFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:name="com.example.cronosapp.TeacherFragment"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainer2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,27 +67,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/interregular"
-                    android:textColor="#143751"
-                    android:text="@string/volver" />
+                    android:text="@string/volver"
+                    android:textColor="#143751" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textView32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:fontFamily="@font/interregular"
-                android:textColor="#143751"
                 android:layout_marginTop="50dp"
-                android:text="@string/m01_uf1_a_8_00_h_l_j_" />
+                android:fontFamily="@font/interregular"
+                android:gravity="center_horizontal"
+                android:text="@string/m01_uf1_a_8_00_h_l_j_"
+                android:textColor="#143751" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp">
 
                 <Button
                     android:id="@+id/buttonEdit"
@@ -110,19 +110,19 @@
                 android:id="@+id/textView33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:fontFamily="@font/interregular"
-                android:textColor="#143751"
                 android:layout_marginTop="30dp"
-                android:text="@string/m01_uf1_b_10_00_h_l_j" />
+                android:fontFamily="@font/interregular"
+                android:gravity="center"
+                android:text="@string/m01_uf1_b_10_00_h_l_j"
+                android:textColor="#143751" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp">
 
                 <Button
                     android:id="@+id/buttonEdit2"
@@ -145,19 +145,19 @@
                 android:id="@+id/textView34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:fontFamily="@font/interregular"
                 android:layout_marginTop="30dp"
-                android:textColor="#143751"
-                android:text="@string/m03_uf1_a_8_00_h_ma_mi" />
+                android:fontFamily="@font/interregular"
+                android:gravity="center"
+                android:text="@string/m03_uf1_a_8_00_h_ma_mi"
+                android:textColor="#143751" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp">
 
                 <Button
                     android:id="@+id/buttonEdit3"
@@ -179,9 +179,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/imageButton"
@@ -194,10 +194,10 @@
                     android:id="@+id/textView54"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/interregular"
                     android:layout_marginTop="12sp"
-                    android:textColor="#143751"
-                    android:text="Crear clase" />
+                    android:fontFamily="@font/interregular"
+                    android:text="Crear clase"
+                    android:textColor="#143751" />
             </LinearLayout>
 
         </LinearLayout>

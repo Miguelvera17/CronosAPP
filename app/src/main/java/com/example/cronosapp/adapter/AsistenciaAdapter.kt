@@ -1,13 +1,13 @@
-package com.example.cronosapp
+package com.example.cronosapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cronosapp.R
 
-class AsistenciaAdapter(private val asistenciaList: List<String>) :
-    RecyclerView.Adapter<AsistenciaAdapter.AsistenciaViewHolder>() {
+class AsistenciaAdapter(private val asistenciaList: List<String>) : RecyclerView.Adapter<AsistenciaAdapter.AsistenciaViewHolder>() {
 
     class AsistenciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.textAlumno)
