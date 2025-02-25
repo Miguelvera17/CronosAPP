@@ -1,4 +1,3 @@
 CRONOSAPP
 
-ACTIVIDAD 5
-Youtube: https://youtu.be/U7Ae2mc7CMU
+App móvil dedicada al control de asistencia de alumnos y personal administrativo para instituciones educativas y universidades.
