@@ -19,16 +19,12 @@ class PreferencesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_preferences)
 
         val buttonBack: ImageButton = findViewById(R.id.imageButtonBack)
-
         buttonBack.setOnClickListener {
             val intent = Intent(this, MenuDrawerActivity::class.java)
             startActivity(intent)
         }
 
-
         val spinner: Spinner = findViewById(R.id.spinner)
-
-
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.language_options,
@@ -37,10 +33,7 @@ class PreferencesActivity : AppCompatActivity() {
 
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
-
-
         spinner.adapter = adapter
-
 
         val toggleButton: ToggleButton = findViewById(R.id.toggleButton)
         toggleButton.setOnCheckedChangeListener { _, isChecked ->

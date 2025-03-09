@@ -15,35 +15,27 @@ class SplashActivity : AppCompatActivity() {
 
         val splashLogo: ImageView = findViewById(R.id.splashLogo)
         val splashText: TextView = findViewById(R.id.splashText)
-
-
         val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.splash_animation)
         splashLogo.startAnimation(rotateAnimation)
 
-
         rotateAnimation.setAnimationListener(object : android.view.animation.Animation.AnimationListener {
             override fun onAnimationStart(animation: android.view.animation.Animation?) {}
-
             override fun onAnimationEnd(animation: android.view.animation.Animation?) {
 
                 splashText.visibility = TextView.VISIBLE
                 val fadeInAnimation = AnimationUtils.loadAnimation(this@SplashActivity, R.anim.fade_in)
                 splashText.startAnimation(fadeInAnimation)
-
                 // Esperar un moment i passar a MainActivity
                 fadeInAnimation.setAnimationListener(object : android.view.animation.Animation.AnimationListener {
                     override fun onAnimationStart(animation: android.view.animation.Animation?) {}
-
                     override fun onAnimationEnd(animation: android.view.animation.Animation?) {
                         val intent = Intent(this@SplashActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
-
                     override fun onAnimationRepeat(animation: android.view.animation.Animation?) {}
                 })
             }
-
             override fun onAnimationRepeat(animation: android.view.animation.Animation?) {}
         })
     }
