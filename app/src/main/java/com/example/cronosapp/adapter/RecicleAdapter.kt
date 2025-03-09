@@ -6,12 +6,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cronosapp.R
+import com.example.cronosapp.data.Alumno
 
-class RecicleAdapter(private var studentList: List<String>) : RecyclerView.Adapter<RecicleAdapter.RecHolder>() {
+class RecicleAdapter(
+    private var studentList: List<Alumno>,
+    private val onItemSelected: (Alumno?) -> Unit // Callback para manejar la selección
+) : RecyclerView.Adapter<RecicleAdapter.RecHolder>() {
+
+    private var selectedStudent: Alumno? = null // Almacena el alumno seleccionado
 
     // ViewHolder para los elementos de la lista
     class RecHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.textAlumn) // Asegúrate de que este ID exista en tu layout
+        val textView: TextView = view.findViewById(R.id.textAlumn)
     }
 
     // Inflar el layout de cada ítem
@@ -23,8 +29,28 @@ class RecicleAdapter(private var studentList: List<String>) : RecyclerView.Adapt
 
     // Vincular los datos con las vistas
     override fun onBindViewHolder(holder: RecHolder, position: Int) {
-        val studentName = studentList[position]
-        holder.textView.text = studentName // Asigna el nombre del alumno
+        val student = studentList[position]
+
+        // Mostrar el nombre del alumno
+        holder.textView.text = student.nombre
+
+        // Cambiar el fondo si el alumno está seleccionado
+        holder.itemView.setBackgroundResource(
+            if (student == selectedStudent) R.color.selected_item_color else android.R.color.transparent
+        )
+
+        // Manejar clics en el ítem
+        holder.itemView.setOnClickListener {
+            if (selectedStudent == student) {
+                // Si el alumno ya está seleccionado, deseleccionarlo
+                selectedStudent = null
+            } else {
+                // Seleccionar el nuevo alumno y deseleccionar el anterior
+                selectedStudent = student
+            }
+            onItemSelected(selectedStudent) // Notificar la selección
+            notifyDataSetChanged() // Actualizar la vista
+        }
     }
 
     // Obtener el número de elementos en la lista
@@ -33,8 +59,14 @@ class RecicleAdapter(private var studentList: List<String>) : RecyclerView.Adapt
     }
 
     // Método para actualizar los datos del RecyclerView
-    fun updateData(newStudentList: List<String>) {
+    fun updateData(newStudentList: List<Alumno>) {
         studentList = newStudentList
-        notifyDataSetChanged() // Notificar al RecyclerView que los datos han cambiado
+        selectedStudent = null // Limpiar la selección al actualizar los datos
+        notifyDataSetChanged()
+    }
+
+    // Obtener el alumno seleccionado
+    fun getSelectedStudent(): Alumno? {
+        return selectedStudent
     }
 }

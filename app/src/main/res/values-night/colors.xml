@@ -15,7 +15,7 @@
     <color name="md_theme_onError">#690005</color>
     <color name="md_theme_errorContainer">#93000A</color>
     <color name="md_theme_onErrorContainer">#FFDAD6</color>
-    <color name="md_theme_background">#0F1417</color>
+    <color name="selected_item_color">#80DEEA</color> <!-- Color de fondo para el ítem seleccionado -->    <color name="md_theme_background">#0F1417</color>
     <color name="md_theme_onBackground">#DFE3E7</color>
     <color name="md_theme_surface">#0F1417</color>
     <color name="md_theme_onSurface">#DFE3E7</color>

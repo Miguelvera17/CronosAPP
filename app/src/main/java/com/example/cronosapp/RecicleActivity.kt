@@ -2,6 +2,7 @@ package com.example.cronosapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cronosapp.adapter.RecicleAdapter
+import com.example.cronosapp.data.Alumno
 import com.example.cronosapp.data.RetrofitService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,6 +21,7 @@ class RecicleActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RecicleAdapter
+    private lateinit var retrofitService: RetrofitService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,42 +32,40 @@ class RecicleActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Inicializar el adaptador con una lista vacía
-        adapter = RecicleAdapter(emptyList())
+        adapter = RecicleAdapter(emptyList()) { selectedStudent ->
+            // Manejar la selección de alumnos (puedes agregar lógica adicional si es necesario)
+        }
         recyclerView.adapter = adapter
 
-        // Botón de volver
-        val bttonBack: ImageButton = findViewById(R.id.imgButtonBack)
-        bttonBack.setOnClickListener {
-            val intent = Intent(this, ClasesActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Botón de eliminar alumnos
-        val bttonSave: Button = findViewById(R.id.button)
-        bttonSave.setOnClickListener {
-            val intent = Intent(this, ClasesActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(this, "Alumnos eliminados", Toast.LENGTH_SHORT).show()
-        }
+        // Inicializar RetrofitService
+        retrofitService = RetrofitService.makeRetrofitService()
 
         // Obtener la lista de alumnos desde la API
         fetchAlumnos()
+
+        // Configurar el botón "Eliminar alumnos"
+        val buttonEliminar: Button = findViewById(R.id.button)
+        buttonEliminar.setOnClickListener {
+            eliminarAlumnoSeleccionado()
+        }
+
+        // Configurar el botón de volver
+        val buttonVolver: ImageButton = findViewById(R.id.imgButtonBack)
+        buttonVolver.setOnClickListener {
+            // Navegar a la actividad anterior o cerrar esta actividad
+            finish() // Cierra la actividad actual y vuelve a la anterior
+        }
     }
 
     private fun fetchAlumnos() {
-        val retrofitService = RetrofitService.makeRetrofitService()
-
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 // Obtener la lista de alumnos desde la API
                 val alumnos = retrofitService.listarAlumnos()
 
-                // Extraer solo los nombres de los alumnos
-                val nombresAlumnos = alumnos.map { it.nombre } // Esto convierte List<Alumno> a List<String>
-
                 // Actualizar el RecyclerView en el hilo principal
                 withContext(Dispatchers.Main) {
-                    adapter.updateData(nombresAlumnos) // Pasar la lista de nombres al adaptador
+                    adapter.updateData(alumnos)
                 }
             } catch (e: Exception) {
                 // Manejar errores (por ejemplo, problemas de red)
@@ -73,5 +74,39 @@ class RecicleActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun eliminarAlumnoSeleccionado() {
+        val alumnoSeleccionado = adapter.getSelectedStudent()
+
+        if (alumnoSeleccionado == null) {
+            Toast.makeText(this, "No hay ningún alumno seleccionado", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                // Eliminar el alumno seleccionado
+                retrofitService.eliminarAlumno(alumnoSeleccionado.nombre)
+
+                // Actualizar la lista de alumnos después de eliminar
+                val alumnosActualizados = retrofitService.listarAlumnos()
+
+                // Actualizar el RecyclerView en el hilo principal
+                withContext(Dispatchers.Main) {
+                    adapter.updateData(alumnosActualizados)
+                    Toast.makeText(this@RecicleActivity, "Alumno eliminado correctamente", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                // Manejar errores (por ejemplo, problemas de red)
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@RecicleActivity, "Error al eliminar el alumno: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+    fun abrirMenuAnadir(view: View) {
+        val intent = Intent(this, menu_anadir::class.java)
+        startActivity(intent)
     }
 }

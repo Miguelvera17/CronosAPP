@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".RecicleActivity">
 
-    <!-- Fragmento Superior -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:name="com.example.cronosapp.TopFragment"
@@ -17,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Fragmento del Profesor -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer2"
         android:name="com.example.cronosapp.TeacherFragment"
@@ -27,7 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragmentContainer" />
 
-    <!-- ScrollView para el contenido desplazable -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -36,14 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragmentContainer2">
 
-        <!-- LinearLayout dentro del ScrollView -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:context=".RecicleActivity">
 
-            <!-- Título "Editar Clase" -->
             <TextView
                 android:id="@+id/textProfile"
                 android:layout_width="match_parent"
@@ -54,7 +49,6 @@
                 android:textColor="#143751"
                 android:textSize="32sp" />
 
-            <!-- Botón de Volver -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,7 +72,6 @@
                     android:textColor="#143751" />
             </LinearLayout>
 
-            <!-- RecyclerView para la lista de alumnos -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_lista_edit"
                 android:layout_width="match_parent"
@@ -86,7 +79,6 @@
                 android:layout_marginTop="50dp"
                 tools:listitem="@layout/item_student_edit" />
 
-            <!-- Botón para eliminar alumnos -->
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
@@ -96,6 +88,18 @@
                 android:layout_marginEnd="80dp"
                 android:backgroundTint="#143751"
                 android:text="Eliminar alumnos" />
+
+            <Button
+                android:id="@+id/buttonAddAlumno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="80dp"
+                android:backgroundTint="#143751"
+                android:onClick="abrirMenuAnadir"
+                android:text="Añadir alumno"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
     </ScrollView>
