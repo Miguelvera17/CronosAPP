@@ -19,12 +19,15 @@ interface RetrofitService {
     @DELETE("alumnos/{nombre}")
     suspend fun eliminarAlumno(@Path("nombre") nombre: String)
 
-    object RetrofitServiceFactory {
+    companion object {
+        private const val BASE_URL = "https://100.27.115.52/"
+
         fun makeRetrofitService(): RetrofitService {
-            return  Retrofit.Builder()
-                .baseUrl("https://100.27.115.52/")
+            return Retrofit.Builder()
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                .build().create(RetrofitService::class.java)
+                .build()
+                .create(RetrofitService::class.java)
         }
     }
 }

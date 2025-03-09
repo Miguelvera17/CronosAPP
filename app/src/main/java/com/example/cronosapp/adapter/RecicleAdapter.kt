@@ -6,26 +6,35 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cronosapp.R
-import com.example.cronosapp.R.layout.item_student_edit
-import com.example.cronosapp.RecicleActivity
-import com.example.cronosapp.Student
 
-class RecicleAdapter(private val studentList: List<String>) : RecyclerView.Adapter<RecicleAdapter.RecHolder>() {
+class RecicleAdapter(private var studentList: List<String>) : RecyclerView.Adapter<RecicleAdapter.RecHolder>() {
 
-        class RecHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val textView: TextView = view.findViewById(R.id.textAlumn)
-        }
+    // ViewHolder para los elementos de la lista
+    class RecHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textView: TextView = view.findViewById(R.id.textAlumn) // Asegúrate de que este ID exista en tu layout
+    }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_student_edit, parent, false)
-            return RecHolder(view)
-        }
+    // Inflar el layout de cada ítem
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_student_edit, parent, false)
+        return RecHolder(view)
+    }
 
-        override fun onBindViewHolder(holder: RecHolder, position: Int) {
-            val student = studentList[position]
-            holder.textView.text = student
-        }
+    // Vincular los datos con las vistas
+    override fun onBindViewHolder(holder: RecHolder, position: Int) {
+        val studentName = studentList[position]
+        holder.textView.text = studentName // Asigna el nombre del alumno
+    }
 
-        override fun getItemCount() = studentList.size
+    // Obtener el número de elementos en la lista
+    override fun getItemCount(): Int {
+        return studentList.size
+    }
+
+    // Método para actualizar los datos del RecyclerView
+    fun updateData(newStudentList: List<String>) {
+        studentList = newStudentList
+        notifyDataSetChanged() // Notificar al RecyclerView que los datos han cambiado
+    }
 }
