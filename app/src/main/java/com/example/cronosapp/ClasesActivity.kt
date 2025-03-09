@@ -11,10 +11,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ClasesActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_clases)
+
 
         val bttonBack : ImageButton = findViewById(R.id.imgButtonBack)
         bttonBack.setOnClickListener {
@@ -26,6 +28,7 @@ class ClasesActivity : AppCompatActivity() {
         butEdit1.setOnClickListener {
             val intent = Intent(this, RecicleActivity::class.java)
             startActivity(intent)
+
 //            Toast.makeText(this, "En desarrollo", Toast.LENGTH_SHORT).show()
         }
 
