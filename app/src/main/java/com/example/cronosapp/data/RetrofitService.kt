@@ -20,9 +20,6 @@ interface RetrofitService {
     @POST("alumnos/")
     suspend fun crearAlumno(@Body alumno: Alumno): Alumno
 
-    @PUT("alumnos/{nombre}")
-    suspend fun actualizarAlumno(@Path("nombre") nombre: String, @Body alumno: Alumno): Alumno
-
     @DELETE("alumnos/{nombre}")
     suspend fun eliminarAlumno(@Path("nombre") nombre: String)
 
@@ -30,19 +27,21 @@ interface RetrofitService {
         private const val BASE_URL = "https://100.27.115.52/"
 
         fun makeRetrofitService(): RetrofitService {
+            // Configurar OkHttpClient para deshabilitar la verificación SSL
             val okHttpClient = OkHttpClient.Builder()
                 .sslSocketFactory(createInsecureSSLSocketFactory(), createInsecureTrustManager())
-                .hostnameVerifier { _, _ -> true }
+                .hostnameVerifier { _, _ -> true } // Ignorar la verificación del hostname
                 .build()
 
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .client(okHttpClient)
+                .client(okHttpClient) // Asignar el OkHttpClient personalizado
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(RetrofitService::class.java)
         }
 
+        // Crear un SSLSocketFactory que ignore la verificación SSL
         private fun createInsecureSSLSocketFactory(): SSLSocketFactory {
             val trustAllCerts = arrayOf<TrustManager>(createInsecureTrustManager())
             val sslContext = SSLContext.getInstance("SSL")
@@ -50,6 +49,7 @@ interface RetrofitService {
             return sslContext.socketFactory
         }
 
+        // Crear un TrustManager que confíe en todos los certificados
         private fun createInsecureTrustManager(): X509TrustManager {
             return object : X509TrustManager {
                 override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
