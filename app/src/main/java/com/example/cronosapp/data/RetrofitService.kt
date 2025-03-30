@@ -11,8 +11,10 @@ import retrofit2.http.Path
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
 import javax.net.ssl.*
+import retrofit2.http.PATCH
 
 interface RetrofitService {
+
 
     @GET("alumnos/")
     suspend fun listarAlumnos(): List<Alumno>
@@ -20,8 +22,11 @@ interface RetrofitService {
     @POST("alumnos/")
     suspend fun crearAlumno(@Body alumno: Alumno): Alumno
 
-    @PUT("alumnos/{nombre}")
-    suspend fun actualizarAlumno(@Path("nombre") nombre: String, @Body alumno: Alumno): Alumno
+    @PATCH("alumnos/{nombre}")
+    suspend fun editarAlumno(
+        @Path("nombre") nombre: String,
+        @Body cambios: Map<String, Any>
+    ): Alumno
 
     @DELETE("alumnos/{nombre}")
     suspend fun eliminarAlumno(@Path("nombre") nombre: String)

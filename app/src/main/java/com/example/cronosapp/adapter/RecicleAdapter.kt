@@ -69,4 +69,9 @@ class RecicleAdapter(
     fun getSelectedStudent(): Alumno? {
         return selectedStudent
     }
+
+    fun setSelectedStudent(alumno: Alumno?) {
+        selectedStudent = alumno
+        notifyDataSetChanged()
+    }
 }

@@ -72,7 +72,14 @@ class RecicleActivity : AppCompatActivity() {
             try {
                 val alumnos = retrofitService.listarAlumnos()
                 withContext(Dispatchers.Main) {
+                    val alumnoSeleccionado = adapter.getSelectedStudent()
                     adapter.updateData(alumnos)
+
+                    // Volver a seleccionar el mismo alumno si aún existe
+                    alumnoSeleccionado?.let { seleccionado ->
+                        val nuevoSeleccionado = alumnos.find { it.nombre == seleccionado.nombre }
+                        adapter.setSelectedStudent(nuevoSeleccionado)
+                    }
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
@@ -81,6 +88,7 @@ class RecicleActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun eliminarAlumnoSeleccionado() {
         val alumnoSeleccionado = adapter.getSelectedStudent()
@@ -99,6 +107,34 @@ class RecicleActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@RecicleActivity, "Error al eliminar: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun editarAlumnoSeleccionado() {
+        val alumnoSeleccionado = adapter.getSelectedStudent()
+        if (alumnoSeleccionado == null) {
+            Toast.makeText(this, "Selecciona un alumno primero", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Simulación de cambios, podrías abrir otra actividad para obtener datos reales
+        val cambios = mapOf(
+            "correo" to "nuevoCorreo@example.com", // Aquí podrías poner datos del usuario
+            "tipo" to "nuevoTipo"
+        )
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val alumnoActualizado = retrofitService.editarAlumno(alumnoSeleccionado.nombre, cambios)
+                withContext(Dispatchers.Main) {
+                    fetchAlumnos() // Recargar la lista
+                    Toast.makeText(this@RecicleActivity, "Alumno actualizado", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@RecicleActivity, "Error al actualizar: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
             }
         }
