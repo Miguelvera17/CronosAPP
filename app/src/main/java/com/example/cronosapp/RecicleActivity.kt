@@ -5,37 +5,102 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cronosapp.adapter.RecicleAdapter
-import com.example.cronosapp.provider.RecicleProvider
+import com.example.cronosapp.data.Alumno
+import com.example.cronosapp.data.RetrofitService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class RecicleActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: RecicleAdapter
+    private lateinit var retrofitService: RetrofitService
+
+    // Registramos el lanzador para el resultado de añadir alumno
+    private val addAlumnoLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            fetchAlumnos() // Actualizamos la lista cuando volvemos con éxito
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recicle_vista)
 
-        val recyclerView: RecyclerView = findViewById(R.id.rv_lista_edit)
-        val studentList = RecicleProvider.studentList
-        val adapter = RecicleAdapter(studentList)
-
+        // Inicializar RecyclerView
+        recyclerView = findViewById(R.id.rv_lista_edit)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // Inicializar el adaptador
+        adapter = RecicleAdapter(emptyList()) { selectedStudent ->
+            // Lógica de selección si es necesaria
+        }
         recyclerView.adapter = adapter
 
-        val bttonBack: ImageButton = findViewById(R.id.imgButtonBack)
-        bttonBack.setOnClickListener {
-            val intent = Intent(this, ClasesActivity::class.java)
-            startActivity(intent)
+        // Inicializar RetrofitService
+        retrofitService = RetrofitService.makeRetrofitService()
+
+        // Cargar datos iniciales
+        fetchAlumnos()
+
+        // Configurar botones
+        findViewById<Button>(R.id.buttonAddAlumno).setOnClickListener {
+            val intent = Intent(this, menu_anadir::class.java)
+            addAlumnoLauncher.launch(intent)
         }
 
-        val bttonSave: Button = findViewById(R.id.button)
-        bttonSave.setOnClickListener {
-            val intent = Intent(this, ClasesActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(this, "Alumnos eliminados", Toast.LENGTH_SHORT).show()
+        findViewById<Button>(R.id.button).setOnClickListener {
+            eliminarAlumnoSeleccionado()
+        }
+
+        findViewById<ImageButton>(R.id.imgButtonBack).setOnClickListener {
+            finish()
         }
     }
 
+    private fun fetchAlumnos() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val alumnos = retrofitService.listarAlumnos()
+                withContext(Dispatchers.Main) {
+                    adapter.updateData(alumnos)
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@RecicleActivity, "Error al cargar alumnos: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun eliminarAlumnoSeleccionado() {
+        val alumnoSeleccionado = adapter.getSelectedStudent()
+        if (alumnoSeleccionado == null) {
+            Toast.makeText(this, "Selecciona un alumno primero", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                retrofitService.eliminarAlumno(alumnoSeleccionado.nombre)
+                withContext(Dispatchers.Main) {
+                    fetchAlumnos() // Actualizamos la lista después de eliminar
+                    Toast.makeText(this@RecicleActivity, "Alumno eliminado", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@RecicleActivity, "Error al eliminar: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
 }

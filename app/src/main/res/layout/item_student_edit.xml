@@ -11,22 +11,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/textAlumn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:fontFamily="@font/interregular"
             android:textColor="#143751"
             android:layout_weight="1"
             tools:text="Anna V." />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

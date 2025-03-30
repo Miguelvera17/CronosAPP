@@ -89,7 +89,18 @@
                 android:backgroundTint="#143751"
                 android:text="Eliminar alumnos" />
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/buttonAddAlumno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="80dp"
+                android:backgroundTint="#143751"
+                android:onClick="abrirMenuAnadir"
+                android:text="Añadir alumno"
+                android:textColor="#FFFFFF" />
 
+        </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
