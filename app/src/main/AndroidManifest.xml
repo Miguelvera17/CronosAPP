@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ModificarAlumnosActivity"
+            android:exported="false" />
+        <activity
             android:name=".menu_anadir"
             android:exported="false"
             tools:ignore="MissingClass" />

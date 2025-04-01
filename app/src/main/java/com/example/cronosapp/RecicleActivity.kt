@@ -23,12 +23,19 @@ class RecicleActivity : AppCompatActivity() {
     private lateinit var adapter: RecicleAdapter
     private lateinit var retrofitService: RetrofitService
 
-    // Registramos el lanzador para el resultado de añadir alumno
     private val addAlumnoLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
-            fetchAlumnos() // Actualizamos la lista cuando volvemos con éxito
+            fetchAlumnos()
+        }
+    }
+
+    private val modifyAlumnoLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            fetchAlumnos()
         }
     }
 
@@ -36,23 +43,16 @@ class RecicleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recicle_vista)
 
-        // Inicializar RecyclerView
         recyclerView = findViewById(R.id.rv_lista_edit)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Inicializar el adaptador
-        adapter = RecicleAdapter(emptyList()) { selectedStudent ->
-            // Lógica de selección si es necesaria
-        }
+        adapter = RecicleAdapter(emptyList()) { selectedStudent -> }
         recyclerView.adapter = adapter
 
-        // Inicializar RetrofitService
         retrofitService = RetrofitService.makeRetrofitService()
 
-        // Cargar datos iniciales
         fetchAlumnos()
 
-        // Configurar botones
         findViewById<Button>(R.id.buttonAddAlumno).setOnClickListener {
             val intent = Intent(this, menu_anadir::class.java)
             addAlumnoLauncher.launch(intent)
@@ -60,6 +60,10 @@ class RecicleActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button).setOnClickListener {
             eliminarAlumnoSeleccionado()
+        }
+
+        findViewById<Button>(R.id.buttonModifyAlumno).setOnClickListener {
+            modificarAlumnoSeleccionado()
         }
 
         findViewById<ImageButton>(R.id.imgButtonBack).setOnClickListener {
@@ -93,7 +97,7 @@ class RecicleActivity : AppCompatActivity() {
             try {
                 retrofitService.eliminarAlumno(alumnoSeleccionado.nombre)
                 withContext(Dispatchers.Main) {
-                    fetchAlumnos() // Actualizamos la lista después de eliminar
+                    fetchAlumnos()
                     Toast.makeText(this@RecicleActivity, "Alumno eliminado", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
@@ -102,5 +106,18 @@ class RecicleActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun modificarAlumnoSeleccionado() {
+        val alumnoSeleccionado = adapter.getSelectedStudent()
+        if (alumnoSeleccionado == null) {
+            Toast.makeText(this, "Selecciona un alumno primero", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val intent = Intent(this, ModificarAlumnosActivity::class.java).apply {
+            putExtra("ALUMNO_ACTUAL", alumnoSeleccionado.nombre)
+        }
+        modifyAlumnoLauncher.launch(intent)
     }
 }
