@@ -7,6 +7,7 @@ import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
@@ -20,8 +21,14 @@ interface RetrofitService {
     @POST("alumnos/")
     suspend fun crearAlumno(@Body alumno: Alumno): Alumno
 
+    @GET("alumnos/{nombre}")
+    suspend fun obtenerAlumno(@Path("nombre") nombre: String): Alumno
+
     @PUT("alumnos/{nombre}")
-    suspend fun actualizarAlumno(@Path("nombre") nombre: String, @Body alumno: Alumno): Alumno
+    suspend fun modificarAlumno(
+        @Path("nombre") nombreActual:String,
+        @Body alumno: Alumno
+    ) : Alumno
 
     @DELETE("alumnos/{nombre}")
     suspend fun eliminarAlumno(@Path("nombre") nombre: String)
