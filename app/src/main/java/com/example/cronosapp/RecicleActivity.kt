@@ -59,7 +59,13 @@ class RecicleActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.button).setOnClickListener {
-            eliminarAlumnoSeleccionado()
+            val alumnoSeleccionado = adapter.getSelectedStudent()
+            if (alumnoSeleccionado == null) {
+                Toast.makeText(this, "Selecciona un alumno primero", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            mostrarDialogoConfirmacion(alumnoSeleccionado)
         }
 
         findViewById<Button>(R.id.buttonModifyAlumno).setOnClickListener {
@@ -119,5 +125,23 @@ class RecicleActivity : AppCompatActivity() {
             putExtra("ALUMNO_ACTUAL", alumnoSeleccionado.nombre)
         }
         modifyAlumnoLauncher.launch(intent)
+    }
+
+    private fun mostrarDialogoConfirmacion(alumno: Alumno) {
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        builder.setTitle("Confirmar eliminación")
+        builder.setMessage("¿Estás seguro de que quieres eliminar a ${alumno.nombre}?")
+
+        builder.setPositiveButton("Sí") { dialog, _ ->
+            eliminarAlumnoSeleccionado()
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss() // Cierra el diálogo sin hacer cambios
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }

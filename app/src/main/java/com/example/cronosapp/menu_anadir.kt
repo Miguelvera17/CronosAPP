@@ -37,7 +37,7 @@ class menu_anadir : AppCompatActivity() {
             }
 
             val nuevoAlumno = Alumno(nombre, correo, contrasena, "alumno")
-            guardarAlumno(nuevoAlumno)
+            mostrarDialogoConfirmacion(nuevoAlumno)
         }
     }
 
@@ -56,5 +56,23 @@ class menu_anadir : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun mostrarDialogoConfirmacion(alumno: Alumno) {
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        builder.setTitle("Confirmar creación")
+        builder.setMessage("¿Estás seguro de que quieres añadir este alumno?")
+
+        builder.setPositiveButton("Sí") { dialog, _ ->
+            guardarAlumno(alumno)
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss() // Cierra el diálogo sin hacer cambios
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }

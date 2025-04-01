@@ -1,10 +1,12 @@
 package com.example.cronosapp
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cronosapp.data.Alumno
 import com.example.cronosapp.data.RetrofitService
@@ -43,13 +45,14 @@ class ModificarAlumnosActivity : AppCompatActivity() {
             val nuevaContrasena = etContrasena.text.toString()
 
             if (validarCampos(nuevoNombre, nuevoCorreo, nuevaContrasena)) {
-                modificarAlumno(nombreActual, nuevoNombre, nuevoCorreo, nuevaContrasena)
+                mostrarDialogoConfirmacion(nombreActual, nuevoNombre, nuevoCorreo, nuevaContrasena)
             }
         }
 
         btnBack.setOnClickListener {
             finish()
         }
+
     }
 
     private fun cargarDatosActuales(nombreActual: String) {
@@ -120,5 +123,23 @@ class ModificarAlumnosActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun mostrarDialogoConfirmacion(nombreActual: String, nuevoNombre: String, nuevoCorreo: String, nuevaContrasena: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmar modificación")
+        builder.setMessage("¿Estás seguro de que quieres modificar este alumno?")
+
+        builder.setPositiveButton("Sí") { dialog, _ ->
+            modificarAlumno(nombreActual, nuevoNombre, nuevoCorreo, nuevaContrasena)
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss() // Cierra el diálogo sin hacer cambios
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }
