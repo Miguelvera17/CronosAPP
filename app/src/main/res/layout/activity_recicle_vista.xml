@@ -90,6 +90,17 @@
                 android:text="Eliminar alumnos" />
 
             <Button
+                android:id="@+id/buttonModifyAlumno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="80dp"
+                android:backgroundTint="#143751"
+                android:text="Modificar alumno"
+                android:textColor="#FFFFFF" />
+
+            <Button
                 android:id="@+id/buttonAddAlumno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
