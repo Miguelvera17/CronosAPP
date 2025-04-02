@@ -52,9 +52,7 @@ class ModificarAlumnosActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             finish()
         }
-
     }
-
     private fun cargarDatosActuales(nombreActual: String) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -136,7 +134,7 @@ class ModificarAlumnosActivity : AppCompatActivity() {
         }
 
         builder.setNegativeButton("No") { dialog, _ ->
-            dialog.dismiss() // Cierra el diálogo sin hacer cambios
+            dialog.dismiss()
         }
 
         val dialog = builder.create()

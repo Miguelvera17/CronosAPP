@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Stats"
+            android:exported="false" />
+        <activity
+            android:name=".PieGraphActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GraphActivity"
+            android:exported="false" />
+        <activity
             android:name=".ModificarAlumnosActivity"
             android:exported="false" />
         <activity

@@ -9,12 +9,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.lifecycleScope
+import com.example.cronosapp.data.UsageDataStore
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.graph.Graph
+import kotlinx.coroutines.launch
 
 class MenuDrawerActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
@@ -40,7 +42,6 @@ class MenuDrawerActivity : AppCompatActivity() {
             }
             true
         }
-
         toolbar=findViewById(R.id.main_toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -72,6 +73,11 @@ class MenuDrawerActivity : AppCompatActivity() {
             R.id.nav_clases -> {
                 Toast.makeText(this, "Mis Clases", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, ClasesActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_stats -> {
+                Toast.makeText(this, "Mis Estadisticas", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Stats::class.java)
                 startActivity(intent)
             }
             R.id.nav_exit -> {

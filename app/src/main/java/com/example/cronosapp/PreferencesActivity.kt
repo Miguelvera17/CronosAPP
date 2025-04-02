@@ -10,9 +10,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.lifecycleScope
 import com.example.cronosapp.R
+import com.example.cronosapp.data.UsageDataStore
+import kotlinx.coroutines.launch
 
 class PreferencesActivity : AppCompatActivity() {
+
+    private lateinit var usageDataStore: UsageDataStore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,6 +48,12 @@ class PreferencesActivity : AppCompatActivity() {
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
+        }
+
+        usageDataStore = UsageDataStore(applicationContext)
+
+        lifecycleScope.launch {
+            usageDataStore.incrementUsageCount("Pref")
         }
     }
 }

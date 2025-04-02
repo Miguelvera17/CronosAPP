@@ -17,6 +17,12 @@
             android:id="@+id/nav_clases"
             android:title="Mis Clases"
             android:icon="@drawable/icontutor"/>
+
+        <item
+            android:id="@+id/nav_stats"
+            android:title="Estadísticas"
+            android:icon="@drawable/iconstats"/>
+
         <item
             android:id="@+id/nav_exit"
             android:title="Salir"

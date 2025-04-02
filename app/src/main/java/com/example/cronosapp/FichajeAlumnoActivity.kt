@@ -5,8 +5,13 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.cronosapp.data.UsageDataStore
+import kotlinx.coroutines.launch
 
 class FichajeAlumnoActivity : AppCompatActivity() {
+
+    private lateinit var usageDataStore: UsageDataStore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,6 +21,12 @@ class FichajeAlumnoActivity : AppCompatActivity() {
         imgBack.setOnClickListener {
             val intent : Intent = Intent(this, MenuDrawerActivity::class.java)
             startActivity(intent)
+        }
+
+        usageDataStore = UsageDataStore(applicationContext)
+
+        lifecycleScope.launch {
+            usageDataStore.incrementUsageCount("Gestion")
         }
     }
 }

@@ -9,9 +9,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.cronosapp.data.UsageDataStore
+import kotlinx.coroutines.launch
 
 class ClasesActivity : AppCompatActivity() {
 
+    private lateinit var usageDataStore: UsageDataStore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -56,6 +60,12 @@ class ClasesActivity : AppCompatActivity() {
         val butList3 : Button = findViewById(R.id.buttonList3)
         butList3.setOnClickListener {
             Toast.makeText(this, "En desarrollo", Toast.LENGTH_SHORT).show()
+        }
+
+        usageDataStore = UsageDataStore(applicationContext)
+
+        lifecycleScope.launch {
+            usageDataStore.incrementUsageCount("Clases")
         }
     }
 }

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cronosapp.adapter.RecicleAdapter
+import com.example.cronosapp.data.UsageDataStore
 import com.example.cronosapp.data.Alumno
 import com.example.cronosapp.data.RetrofitService
 import kotlinx.coroutines.CoroutineScope
@@ -22,6 +23,7 @@ class RecicleActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RecicleAdapter
     private lateinit var retrofitService: RetrofitService
+    private lateinit var usageDataStore: UsageDataStore
 
     private val addAlumnoLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -43,6 +45,7 @@ class RecicleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recicle_vista)
 
+        usageDataStore = UsageDataStore(this) // Inicializar el UsageDataStore
         recyclerView = findViewById(R.id.rv_lista_edit)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -53,27 +56,39 @@ class RecicleActivity : AppCompatActivity() {
 
         fetchAlumnos()
 
+        // Botón "Añadir Alumno"
         findViewById<Button>(R.id.buttonAddAlumno).setOnClickListener {
+            incrementarContador("Añadir")
             val intent = Intent(this, menu_anadir::class.java)
             addAlumnoLauncher.launch(intent)
         }
 
+        // Botón "Eliminar Alumno"
         findViewById<Button>(R.id.button).setOnClickListener {
+            incrementarContador("Eliminar")
             val alumnoSeleccionado = adapter.getSelectedStudent()
             if (alumnoSeleccionado == null) {
                 Toast.makeText(this, "Selecciona un alumno primero", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
             mostrarDialogoConfirmacion(alumnoSeleccionado)
         }
 
+        // Botón "Modificar Alumno"
         findViewById<Button>(R.id.buttonModifyAlumno).setOnClickListener {
+            incrementarContador("Editar")
             modificarAlumnoSeleccionado()
         }
 
         findViewById<ImageButton>(R.id.imgButtonBack).setOnClickListener {
             finish()
+        }
+    }
+
+    // Función para incrementar el contador de uso de un botón
+    private fun incrementarContador(activityName: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            usageDataStore.incrementUsageCount(activityName)
         }
     }
 
