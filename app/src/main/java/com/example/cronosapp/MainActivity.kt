@@ -1,40 +1,47 @@
 package com.example.cronosapp
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.animation.AnimationUtils
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.Spinner
-import androidx.activity.enableEdgeToEdge
+import android.widget.EditText
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.splashscreen.SplashScreen
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.cronosapp.ui.viewmodel.LoginViewModel
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
 
+    private val loginViewModel: LoginViewModel by viewModels() // Instancia del ViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val button: Button = findViewById(R.id.loginButton)
-        button.setOnClickListener {
-            val intent = Intent(this, MenuDrawerActivity::class.java)
-            startActivity(intent)
+        // Referencias de la UI
+        val usernameEditText: EditText = findViewById(R.id.editTextUser)
+        val passwordEditText: EditText = findViewById(R.id.editTextExample)
+        val loginButton: Button = findViewById(R.id.loginButton)
+
+        // Acción de login al presionar el botón
+        loginButton.setOnClickListener {
+            val username = usernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            loginViewModel.login(username, password)
         }
 
-        val spinner: Spinner = findViewById(R.id.mySpinner)
-
-        val adapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.language_options,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        }
-        spinner.adapter = adapter
+        // Observar el estado de login para actualizar la UI
+        loginViewModel.loginStatus.observe(this, { status ->
+            when (status) {
+                is LoginViewModel.LoginStatus.Success -> {
+                    // Login exitoso
+                    Toast.makeText(this, "Login exitoso", Toast.LENGTH_SHORT).show()
+                    // Navegar a otra actividad o hacer lo que necesites
+                }
+                is LoginViewModel.LoginStatus.Error -> {
+                    // Mostrar error
+                    Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 }

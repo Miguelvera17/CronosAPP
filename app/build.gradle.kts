@@ -39,7 +39,21 @@ android {
 }
 
 dependencies {
+    // Espresso dependencies (UI testing)
+    implementation("androidx.test.espresso:espresso-core:3.4.0")
+    implementation("androidx.test.espresso:espresso-intents:3.4.0")
+    implementation("androidx.test.ext:junit:1.1.3")
+    implementation("androidx.test:runner:1.4.0")
+    implementation("androidx.test:rules:1.4.0")
 
+    // Unit Test dependencies
+    implementation("junit:junit:4.13.2")
+    implementation("androidx.arch.core:core-testing:2.1.0")
+    implementation("org.mockito:mockito-core:3.12.4")
+    implementation("org.mockito:mockito-android:3.12.4")
+
+    // Lifecycle ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation(libs.androidx.core.ktx)
@@ -52,6 +66,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation(libs.firebase.crashlytics.buildtools)
+    implementation(libs.junit.junit)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
