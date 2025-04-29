@@ -16,22 +16,26 @@ class LoginViewModelTest {
 
     @Test
     fun testValidUser() {
-        val validUser = "validUser"
+        val validUser = "usuario2"
         val validPassword = "ValidPassword123"
-
-        // Cambiar el resultado a un String? y comprobar si es null (validación exitosa)
         val result = loginViewModel.validateLogin(validUser, validPassword)
-        assertNull(result)  // Si el resultado es null, la validación es exitosa
+        assertNull(result)
+    }
+
+    @Test
+    fun testEmptyUser() {
+        val invalidUser = ""
+        val validPassword = "ValidPassword123"
+        val result = loginViewModel.validateLogin(invalidUser, validPassword)
+        assertEquals("Campo usuario no puede ser vacio", result)
     }
 
     @Test
     fun testInvalidUser() {
-        val invalidUser = "invalidUser"
+        val invalidUser = "invalidUser."
         val validPassword = "ValidPassword123"
-
-        // Cambiar el resultado a un String? y comprobar si el mensaje de error es el esperado
         val result = loginViewModel.validateLogin(invalidUser, validPassword)
-        assertEquals("Usuario o contraseña incorrectos", result)  // El mensaje de error esperado
+        assertEquals("Usuario incorrecto. No debe contener caracteres especiales", result)
     }
 
     @Test
@@ -39,8 +43,15 @@ class LoginViewModelTest {
         val validUser = "validUser"
         val invalidPassword = "invalid"
 
-        // Cambiar el resultado a un String? y comprobar si el mensaje de error es el esperado
         val result = loginViewModel.validateLogin(validUser, invalidPassword)
-        assertEquals("Usuario o contraseña incorrectos", result)  // El mensaje de error esperado
+        assertEquals("Password demasiado corto. Debe ser minimo de 8 caracteres", result)
+    }
+
+    @Test
+    fun testEmptyPassword() {
+        val validUser = "validUser"
+        val validPassword = ""
+        val result = loginViewModel.validateLogin(validUser, validPassword)
+        assertEquals("Campo password no puede ser vacio", result)
     }
 }

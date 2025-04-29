@@ -8,38 +8,42 @@ class LoginViewModel : ViewModel() {
 
     private val _loginStatus = MutableLiveData<LoginStatus>()
     val loginStatus: LiveData<LoginStatus> get() = _loginStatus
+    val regex = ".*[\\.\\|\\$%&/·=].*".toRegex()
 
-    // Definir el estado de login (exitoso o con error)
     sealed class LoginStatus {
         object Success : LoginStatus()
         data class Error(val message: String) : LoginStatus()
     }
 
-    // Método para validar las credenciales de login
     fun login(username: String, password: String) {
         val validationResult = validateLogin(username, password)
         if (validationResult == null) {
-            // Si las credenciales son válidas, consideramos que el login es exitoso
             _loginStatus.value = LoginStatus.Success
         } else {
-            // Si hay un error de validación, se pasa el mensaje de error
             _loginStatus.value = LoginStatus.Error(validationResult)
         }
     }
 
-    // Método que valida los campos de usuario y contraseña
     fun validateLogin(username: String, password: String): String? {
-        // Verificar que los campos no estén vacíos
-        if (username.isEmpty() || password.isEmpty()) {
-            return "Los campos no pueden estar vacíos"
+
+        if (username.isEmpty()) {
+            return "Campo usuario no puede ser vacio"
         }
 
-        // Verificar que el nombre de usuario y la contraseña sean correctos (ejemplo simple)
-        if (username != "usuario" || password != "contraseña") {
+        if (password.isEmpty()) {
+            return "Campo password no puede ser vacio"
+        }
+
+        if (username=="usuario" || password == "contraseña") {
             return "Usuario o contraseña incorrectos"
         }
+        if (username.contains(regex)) {
+            return "Usuario incorrecto. No debe contener caracteres especiales"
+        }
 
-        // Si pasa todas las validaciones, se devuelve null
+        if (password.length <= 8) {
+            return "Password demasiado corto. Debe ser minimo de 8 caracteres"
+        }
         return null
     }
 }
