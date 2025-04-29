@@ -9,14 +9,14 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.rule.ActivityTestRule
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class LoginActivityTest {
 
     @get:Rule
-    var activityRule = ActivityTestRule(MainActivity::class.java)
+    var activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Before
     fun setUp() {
@@ -44,10 +44,10 @@ class LoginActivityTest {
     fun testLoginWithInvalidCredentials() {
         // Ingresa un nombre de usuario y contraseña inválidos
         onView(withId(R.id.editTextUser))
-            .perform(typeText("invalidUser"), closeSoftKeyboard())
+            .perform(typeText("invalidUser."), closeSoftKeyboard())
 
         onView(withId(R.id.editTextExample))
-            .perform(typeText("invalidPassword"), closeSoftKeyboard())
+            .perform(typeText("validPass"), closeSoftKeyboard())
 
         // Clic en el botón de login
         onView(withId(R.id.loginButton)).perform(click())
