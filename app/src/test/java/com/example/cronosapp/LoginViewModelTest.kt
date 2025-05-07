@@ -15,43 +15,92 @@ class LoginViewModelTest {
     }
 
     @Test
-    fun testValidUser() {
+    fun testValidCredentials() {
+        val validEmail = "usuario@correo.com"
         val validUser = "usuario2"
         val validPassword = "ValidPassword123"
-        val result = loginViewModel.validateLogin(validUser, validPassword)
+        val result = loginViewModel.validateLogin(validEmail, validUser, validPassword)
         assertNull(result)
     }
 
     @Test
-    fun testEmptyUser() {
-        val invalidUser = ""
+    fun testEmptyEmail() {
+        val invalidEmail = ""
+        val validUser = "usuario2"
         val validPassword = "ValidPassword123"
-        val result = loginViewModel.validateLogin(invalidUser, validPassword)
-        assertEquals("Campo usuario no puede ser vacio", result)
+        val result = loginViewModel.validateLogin(invalidEmail, validUser, validPassword)
+        assertEquals("El campo email no puede estar vacío", result)
     }
 
     @Test
-    fun testInvalidUser() {
+    fun testInvalidEmailWithoutAT() {
+        val invalidEmail = "usuariocorreo.com"
+        val validUser = "usuario2"
+        val validPassword = "ValidPassword123"
+        val result = loginViewModel.validateLogin(invalidEmail, validUser, validPassword)
+        assertEquals("Formato de email inválido", result)
+    }
+
+    @Test
+    fun testInvalidEmailWithoutCOM() {
+        val invalidEmail = "usuario@correo"
+        val validUser = "usuario2"
+        val validPassword = "ValidPassword123"
+        val result = loginViewModel.validateLogin(invalidEmail, validUser, validPassword)
+        assertEquals("Formato de email inválido", result)
+    }
+
+    @Test
+    fun testInvalidEmailWithSpace() {
+        val invalidEmail = "usuario @correo.com"
+        val validUser = "usuario2"
+        val validPassword = "ValidPassword123"
+        val result = loginViewModel.validateLogin(invalidEmail, validUser, validPassword)
+        assertEquals("Formato de email inválido", result)
+    }
+
+    @Test
+    fun testEmptyUser() {
+        val validEmail = "test@example.com"
+        val invalidUser = ""
+        val validPassword = "ValidPassword123"
+        val result = loginViewModel.validateLogin(validEmail, invalidUser, validPassword)
+        assertEquals("El campo usuario no puede estar vacío", result)
+    }
+
+    @Test
+    fun testInvalidUserCharacters() {
+        val validEmail = "test@example.com"
         val invalidUser = "invalidUser."
         val validPassword = "ValidPassword123"
-        val result = loginViewModel.validateLogin(invalidUser, validPassword)
+        val result = loginViewModel.validateLogin(validEmail, invalidUser, validPassword)
         assertEquals("Usuario incorrecto. No debe contener caracteres especiales", result)
     }
 
     @Test
-    fun testInvalidPassword() {
-        val validUser = "validUser"
-        val invalidPassword = "invalid"
-
-        val result = loginViewModel.validateLogin(validUser, invalidPassword)
-        assertEquals("Password demasiado corto. Debe ser minimo de 8 caracteres", result)
+    fun testEmptyPassword() {
+        val validEmail = "test@example.com"
+        val validUser = "usuario2"
+        val emptyPassword = ""
+        val result = loginViewModel.validateLogin(validEmail, validUser, emptyPassword)
+        assertEquals("El campo contraseña no puede estar vacío", result)
     }
 
     @Test
-    fun testEmptyPassword() {
-        val validUser = "validUser"
-        val validPassword = ""
-        val result = loginViewModel.validateLogin(validUser, validPassword)
-        assertEquals("Campo password no puede ser vacio", result)
+    fun testShortPassword() {
+        val validEmail = "test@example.com"
+        val validUser = "usuario2"
+        val shortPassword = "12345"
+        val result = loginViewModel.validateLogin(validEmail, validUser, shortPassword)
+        assertEquals("Contraseña demasiado corta. Debe tener mínimo 8 caracteres", result)
+    }
+
+    @Test
+    fun testBlockedCredentials() {
+        val validEmail = "test@example.com"
+        val blockedUser = "usuario"
+        val blockedPassword = "contraseña"
+        val result = loginViewModel.validateLogin(validEmail, blockedUser, blockedPassword)
+        assertEquals("Usuario o contraseña incorrectos", result)
     }
 }

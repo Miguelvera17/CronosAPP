@@ -51,20 +51,20 @@
             android:textColor="#2A2E43"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:text="@string/id_instituto" />
+            android:text="Email" />
 
         <EditText
-            android:id="@+id/editTextIDins"
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:padding="12dp"
-            android:hint="@string/introduzca_id"
+            android:hint="Introduzca email"
             android:textColor="#143751"
             android:textColorHint="#7D8489"
             android:fontFamily="@font/interregular"
             android:background="@drawable/edit_text_background"
-            android:inputType="number" />
+            android:inputType="textEmailAddress" />
 
         <!-- Usuario -->
         <TextView
@@ -157,6 +157,16 @@
             android:layout_height="wrap_content"
             android:text="@string/iniciar_sesi_n_con_correo_institucional"
             android:textColor="#2A2E43" />
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            />
 
     </LinearLayout>
 

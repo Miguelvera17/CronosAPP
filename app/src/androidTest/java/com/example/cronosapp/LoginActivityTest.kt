@@ -36,7 +36,8 @@ class LoginActivityTest {
         onView(withId(R.id.loginButton)).perform(click())
 
         // Verifica que se navegue a la siguiente pantalla o muestre un mensaje de éxito
-        onView(withText("Login Successful"))
+        onView(withId(R.id.textViewMessage)).check(matches(withText("Login Successful")))
+
             .check(matches(isDisplayed()))
     }
 
@@ -53,7 +54,10 @@ class LoginActivityTest {
         onView(withId(R.id.loginButton)).perform(click())
 
         // Verifica que aparezca un mensaje de error
-        onView(withText("Invalid credentials"))
+        onView(withId(R.id.textViewMessage))
+            .check(matches(withText("Usuario incorrecto. No debe contener caracteres especiales")))
+
+
             .check(matches(isDisplayed()))
     }
 }

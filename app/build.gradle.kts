@@ -39,37 +39,30 @@ android {
 }
 
 dependencies {
-    // Espresso dependencies (UI testing)
-    implementation("androidx.test.espresso:espresso-core:3.4.0")
-    implementation("androidx.test.espresso:espresso-intents:3.4.0")
-    implementation("androidx.test.ext:junit:1.1.3")
-    implementation("androidx.test:runner:1.4.0")
-    implementation("androidx.test:rules:1.4.0")
+    // UI testing
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.4.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.test:rules:1.4.0")
 
-    // Unit Test dependencies
-    implementation("junit:junit:4.13.2")
-    implementation("androidx.arch.core:core-testing:2.1.0")
-    implementation("org.mockito:mockito-core:3.12.4")
-    implementation("org.mockito:mockito-android:3.12.4")
+    // Unit Testing
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("org.mockito:mockito-android:3.12.4")
 
-    // Lifecycle ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    // Core app dependencies
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
-    implementation(libs.androidx.core.ktx)
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.activity:activity-ktx:1.8.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation("com.google.firebase:firebase-crashlytics-buildtools:2.9.9")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation(libs.firebase.crashlytics.buildtools)
-    implementation(libs.junit.junit)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
 }
