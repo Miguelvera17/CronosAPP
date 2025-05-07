@@ -38,7 +38,7 @@ class LoginViewModelTest {
         val validUser = "usuario2"
         val validPassword = "ValidPassword123"
         val result = loginViewModel.validateLogin(invalidEmail, validUser, validPassword)
-        assertEquals("Formato de email inválido", result)
+        assertEquals("Formato de email debe contener @", result)
     }
 
     @Test
@@ -47,7 +47,7 @@ class LoginViewModelTest {
         val validUser = "usuario2"
         val validPassword = "ValidPassword123"
         val result = loginViewModel.validateLogin(invalidEmail, validUser, validPassword)
-        assertEquals("Formato de email inválido", result)
+        assertEquals("Formato de email debe contener .com", result)
     }
 
     @Test
@@ -56,7 +56,7 @@ class LoginViewModelTest {
         val validUser = "usuario2"
         val validPassword = "ValidPassword123"
         val result = loginViewModel.validateLogin(invalidEmail, validUser, validPassword)
-        assertEquals("Formato de email inválido", result)
+        assertEquals("Formato de email no puede contener espacios", result)
     }
 
     @Test
@@ -96,7 +96,7 @@ class LoginViewModelTest {
     }
 
     @Test
-    fun testBlockedCredentials() {
+    fun testInvalidCredentials() {
         val validEmail = "test@example.com"
         val blockedUser = "usuario"
         val blockedPassword = "contraseña"
